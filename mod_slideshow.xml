@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.8" client="site" method="upgrade">
+    <name>Slideshow</name>
+    <creationDate>4/25/23</creationDate>
+    <author>Daniel Stone</author>
+    <authorEmail>daniel@danielstone.dev</authorEmail>
+    <authorUrl>https://danielstone.dev</authorUrl>
+    <copyright>A copyright</copyright>
+    <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+    <version>1.0</version>
+    <description>Display a series of images in a slideshow</description>
+
+    <namespace path="src">ThreeStone\Module\Slideshow</namespace>
+    <files>
+        <filename module="mod_slideshow">mod_slideshow.php</filename>
+        <folder>tmpl</folder>
+        <filename>mod_slideshow.xml</filename>
+        <folder>src</folder>
+    </files>
+
+    <config>
+        <fields name="params">
+            <fieldset name="basic">
+                <field
+                        name="images"
+                        type="subform"
+                        label="Image List"
+                        description="Image Upload List"
+                        multiple="true"
+                        min="2"
+                >
+                    <form>
+                        <field
+                                name="image"
+                                type="accessiblemedia"
+                                label="Slide"
+                        />
+                        <field
+                                name="upper_caption"
+                                type="text"
+                                label="Upper Caption for this Slide"
+                        />
+                        <field
+                                name="lower_caption"
+                                type="text"
+                                label="Lower Caption for this Slide"
+                        />
+                        <field
+                            name="caption_color"
+                            type="color"
+                            default="#FFFFFF"
+                            format="hex"
+                            label="Text color for caption"
+                        />
+                    </form>
+                </field>
+            </fieldset>
+            <fieldset name="options">
+                <field
+                        name="height_xxl"
+                        type="text"
+                        label="Bootstrap XXL Breakpoint Height"
+                        default="600px"
+                />
+                <field
+                        name="height_xl"
+                        type="text"
+                        label="Bootstrap XL Breakpoint Height"
+                        default="600px"
+                />
+                <field
+                        name="height_lg"
+                        type="text"
+                        label="Bootstrap LG Breakpoint Height"
+                        default="600px"
+                />
+                <field
+                        name="height_md"
+                        type="text"
+                        label="Bootstrap MD Breakpoint Height"
+                        default="600px"
+                />
+                <field
+                        name="height_sm"
+                        type="text"
+                        label="Bootstrap SM Breakpoint Height"
+                        default="600px"
+                />
+                <field
+                        name="height_xsm"
+                        type="text"
+                        label="Bootstrap XSM Breakpoint Height"
+                        default="600px"
+                />
+            </fieldset>
+        </fields>
+    </config>
+</extension>
